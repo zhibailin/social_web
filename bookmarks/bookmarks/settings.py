@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'account.apps.AccountConfig', # 放在最前面
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
