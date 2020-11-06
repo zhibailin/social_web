@@ -29,6 +29,7 @@ def user_login(request):
 # if the user is not authenticated, it redirects the user to the login URL 
 # with the originally requested URL as a GET parameter named `next` (
 # http://127.0.0.1:8000/account/login/?next=/account/).
+# http://127.0.0.1:8000/account/
 @login_required
 def dashboard(request):
     return render(request,
