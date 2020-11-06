@@ -4,6 +4,7 @@
 
 {% block content %}
   <h1>Log-in</h1>
+  <!--Django uses the `AuthenticationForm` form located at `django.contrib.auth.forms` by default.-->
   {% if form.errors %}
     <p>
       Your username and password didn't match.
@@ -17,6 +18,8 @@
     <form action="{% url 'login' %}" method="post">
         {{ form.as_p }}
         {% csrf_token %}
+        <!--The next parameter has to be a URL. 
+        If this parameter is given, the Django login view will redirect the user to the given URL after a successful login.-->
         <input type="hidden" name="next" value="{{ next }}" />
         <p><input type="submit" value="Log-in"></p>
     </form>
