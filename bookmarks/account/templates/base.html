@@ -8,8 +8,11 @@
 <body>
   <div id="header">
     <span class="logo">Bookmarks</span>
+    <!--a `User` object in the `request.user` even if the user is not authenticated-->
     {% if request.user.is_authenticated %}
       <ul class="menu">
+      <!--define a `section` variable to track the site's section that the user is browsing-->
+      <!--check the current section to add a selected class-->
         <li {% if section == "dashboard" %}class="selected"{% endif %}>
           <a href="{% url 'dashboard' %}">My dashboard</a>
         </li>
