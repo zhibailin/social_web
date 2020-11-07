@@ -10,3 +10,5 @@ Django 对静态文件的服务很低效，只能用于开发环境，不能用�
 
 `python manage.py makemigrations`
 `python manage.py migrate`
+
+http://127.0.0.1:8000/admin/ i
