@@ -49,3 +49,7 @@ Use the management command runserver_plus provided by Django Extensions to run t
 测试 HTTP**S**：https://mysite.com:8000/account/login/
 
 You can now serve your site through HTTPS during development in order to test social authentication with Facebook, Twitter, and Google.
+
+#### Authentication using Facebook
+略
+#### Authentication using Twitter
