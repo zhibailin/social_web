@@ -19,3 +19,7 @@ http://127.0.0.1:8000/admin/account/edit
  add an authentication backend to let users authenticate in your site using their email address instead of their username.
 
  http://127.0.0.1:8000/account/login/ 
+
+### social authentication
+Python Social Auth is a Python module that simplifies the process of adding social authentication to your website.
+`pip install social-auth-app-django==3.1.0`
