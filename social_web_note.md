@@ -53,3 +53,6 @@ You can now serve your site through HTTPS during development in order to test so
 #### Authentication using Facebook
 略
 #### Authentication using Twitter
+
+#### Authentication using Google
+略
