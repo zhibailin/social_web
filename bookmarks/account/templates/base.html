@@ -35,6 +35,8 @@
     </span>
   </div>
 <!--the messages framework applies globally to the project-->
+<!--The messages framework includes the **context processor**, 
+which adds a `messages` variable to the request context.-->
   {% if messages %}
     <ul class="messages">
     {% for message in messages %}
