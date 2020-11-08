@@ -23,3 +23,6 @@ http://127.0.0.1:8000/admin/account/edit
 ### social authentication
 Python Social Auth is a Python module that simplifies the process of adding social authentication to your website.
 `pip install social-auth-app-django==3.1.0`
+
+sync Python Social Auth models with your database
+`python manage.py migrate`
