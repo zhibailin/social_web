@@ -42,3 +42,10 @@ sync Python Social Auth models with your database
 `pip install werkzeug==0.16.0`
 
 `pip install pyOpenSSL==19.0.0`
+
+Use the management command runserver_plus provided by Django Extensions to run the development server:
+`python manage.py runserver_plus --cert-file cert.crt`
+
+测试 HTTP**S**：https://mysite.com:8000/account/login/
+
+You can now serve your site through HTTPS during development in order to test social authentication with Facebook, Twitter, and Google.
