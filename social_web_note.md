@@ -15,3 +15,7 @@ http://127.0.0.1:8000/admin/
 
 http://127.0.0.1:8000/admin/account/edit
 显示诸如“修改成功”的反馈信息
+
+ add an authentication backend to let users authenticate in your site using their email address instead of their username.
+
+ http://127.0.0.1:8000/account/login/ 
