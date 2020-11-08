@@ -31,3 +31,14 @@ sync Python Social Auth models with your database
 `127.0.0.1 mysite.com`
 
 测试：http://mysite.com:8000/account/login
+
+### Running the development server through HTTPS
+
+**Django Development server** 无法通过 HTTPS 为您的网站提供服务，因为这不是其预期用途。需要 `RunServerPlus` extension。
+注意：Django Extensions 仅可用于开发环境，不能用于产品环境。
+
+`pip install django-extensions==2.2.5`
+
+`pip install werkzeug==0.16.0`
+
+`pip install pyOpenSSL==19.0.0`
