@@ -26,3 +26,8 @@ Python Social Auth is a Python module that simplifies the process of adding soci
 
 sync Python Social Auth models with your database
 `python manage.py migrate`
+
+在 `/etc/hosts` 中添加一行：
+`127.0.0.1 mysite.com`
+
+测试：http://mysite.com:8000/account/login
