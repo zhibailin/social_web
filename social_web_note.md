@@ -67,3 +67,6 @@ You can now serve your site through HTTPS during development in order to test so
 `django-admin startapp images`
 
 ### Creating many-to-many relationships
+1. define the `Image` model
+2. create an initial migration: `python manage.py makemigrations images`
+3. apply the migration (synce `Image` model to the database): `python manage.py migrate images`
