@@ -65,3 +65,5 @@ You can now serve your site through HTTPS during development in order to test so
 ## Creating an image bookmarking website
 
 `django-admin startapp images`
+
+### Creating many-to-many relationships
