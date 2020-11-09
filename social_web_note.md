@@ -83,3 +83,5 @@ In order to use the urllib to retrieve images from URLs served through HTTPS, yo
 https://127.0.0.1:8000/images/create/?**title=...**&**url=...**
 
 https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://upload.wikimedia.org/wikipedia/commons/8/85/Django_Reinhardt_and_Duke_Ellington_%28Gottlieb%29.jpg.
+
+提交后，get_absolute_url 未定义，但图片已保存：https://127.0.0.1:8000/admin/images/image/
