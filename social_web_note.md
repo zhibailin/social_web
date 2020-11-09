@@ -56,3 +56,12 @@ You can now serve your site through HTTPS during development in order to test so
 
 #### Authentication using Google
 略
+
+# Sharing Content
+1. Define a model to store images and their information
+2. Create a form and a view to handle image uploads
+3. Build a system for users to be able to post images that they find on external websites
+
+## Creating an image bookmarking website
+
+`django-admin startapp images`
