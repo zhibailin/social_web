@@ -29,17 +29,17 @@ class ImageCreateForm(forms.ModelForm):
     def save(self, force_insert=False,
                    force_update=False,
                    commit=True):
-        image = super().save(commit=False)
+        image = super().save(commit=False)              # create a new image instance
         image_url = self.cleaned_data['url']
-        name = slugify(image.title)
+        name = slugify(image.title)                     # generate the image name
         extension = image_url.rsplit('.', 1)[1].lower()
         image_name = f'{name}.{extension}'
         
-        # download image from the given URL
+        # download image from the given URL and save it
         response = request.urlopen(image_url)
         image.image.save(image_name,
-                         ContentFile(response.read()),
-                         save=False)
-        if commit:
-            image.save()
+                         ContentFile(response.read()),  # save the file to the media directory
+                         save=False)                    # avoid saving the object to the database
+        if commit:                                      # to maintain the same behavior as the save() method you override
+            image.save()                                # you save the form to the database only when the commit parameter is True
         return image
