@@ -71,3 +71,6 @@ You can now serve your site through HTTPS during development in order to test so
 2. create an initial migration: `python manage.py makemigrations images`
 3. apply the migration (synce `Image` model to the database): `python manage.py migrate images`
 ### Registering the image model in the administration site
+`python manage.py runserver_plus --cert-file cert.crt`
+
+https://127.0.0.1:8000/admin/
