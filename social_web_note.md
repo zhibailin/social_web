@@ -74,3 +74,8 @@ You can now serve your site through HTTPS during development in order to test so
 `python manage.py runserver_plus --cert-file cert.crt`
 
 https://127.0.0.1:8000/admin/
+
+## Posting content from other websites
+In order to use the urllib to retrieve images from URLs served through HTTPS, you need to install the `Certifi Python` package. 
+
+`pip install --upgrade certifi`
