@@ -97,3 +97,6 @@ https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://u
 >For security reasons, your browser will prevent you from running the bookmarklet over HTTP on a site served through HTTPS. You will need to be able to load the bookmarklet on any site, including sites secured through HTTPS. To run your development server using an auto-generated SSL/TLS certificate, you will use RunServerPlus from Django Extensions, which you installed in the previous chapter.
 
 `python manage.py runserver_plus --cert-file cert.crt`
+
+### Creating image thumbnails using easy-thumbnails
+`pip install easy-thumbnails==2.7`
