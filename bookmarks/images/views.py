@@ -23,7 +23,6 @@ def image_create(request):
             return redirect(new_item.get_absolute_url())
     else:
         # build form with data provided by the bookmarklet via GET by the JavaScript tool
-        # TODO: the JavaScript tool
         form = ImageCreateForm(data=request.GET)
     
     return render(request,
