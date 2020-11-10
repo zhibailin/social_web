@@ -3,6 +3,7 @@
 {% block title %}{{ image.title }}{% endblock title %}
 
 {% block content %}
+    <!-- image detail -->
     <h1>{{ image.title }}</h1>
     <img src="{{ image.image.url }}" class="image-detail">
     {% with total_likes as image.users_like.count %}
@@ -14,6 +15,7 @@
         </div>
         {{ image.description|linebreaks }}
     </div>
+    <!-- display all the users who like this image -->
     <div class="image-like">
         {% for user in image.users_like.all %}
           <div>
