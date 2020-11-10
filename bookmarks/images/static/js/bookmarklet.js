@@ -26,13 +26,14 @@
         });
 
         // find images and display them
-        jQuery.each(jQuery('img[src$="jpg"]'),function(index, image) {
-            if (jQuery(image).width() >= min_width && jQuery(image).height() >= min_height)
-            {
+        jQuery.each(jQuery('img[src$="jpg"]'), function (index, image) {
+            if (jQuery(image).width() >= min_width && jQuery(image).height()
+                >= min_height) {
                 image_url = jQuery(image).attr('src');
                 jQuery('#bookmarklet .images').append('<a href="#"><img src="'+image_url +'" /></a>');
             }
-        })
+        });
+
     };
 
     // Check if jQuery is loaded
@@ -40,10 +41,11 @@
         bookmarklet();
     } else {
         // Check for conflicts
-        var conflicts = typeof window.$ != 'undefined';
+        var conflict = typeof window.$ != 'undefined';
         // Create the script and point to Google API
         var script = document.createElement('script');
-        script.src = '//ajax.googleapis.com/ajax/libs/jquery/' + jquery_version + "/jquery.min.js";
+        script.src = '//lib.sinaapp.com/js/jquery/' +
+            jquery_version + '/jquery.min.js';
         // Add the script to the 'head' for processing
         document.head.appendChild(script);
         // Create a way to wait until script loading
@@ -53,6 +55,7 @@
             if (typeof window.jQuery == 'undefined') {
                 if (--attempts > 0) {
                     // Calls himself in a few milliseconds
+                    window.setTimeout(arguments.callee, 250)
                 } else {
                     // Too much attempts to load, send error
                     alert('An error occurred while loading jQuery')
