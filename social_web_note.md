@@ -93,3 +93,7 @@ https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://u
 测试：
 1. https://127.0.0.1:8000/account/ 将 `Bookmark it` 按钮拖到书签栏
 2. 打开亚马逊或者其他网站，点击 `Bookmark it`
+3. 访问的图片网站必须是 HTTPS。浏览器会阻止您在通过 HTTPS 服务的网站上运行基于 HTTP的 bookmarklet。
+>For security reasons, your browser will prevent you from running the bookmarklet over HTTP on a site served through HTTPS. You will need to be able to load the bookmarklet on any site, including sites secured through HTTPS. To run your development server using an auto-generated SSL/TLS certificate, you will use RunServerPlus from Django Extensions, which you installed in the previous chapter.
+
+`python manage.py runserver_plus --cert-file cert.crt`
