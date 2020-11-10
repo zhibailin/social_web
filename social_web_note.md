@@ -87,3 +87,5 @@ https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://u
 提交后，get_absolute_url 未定义，但图片已保存：https://127.0.0.1:8000/admin/images/image/
 
 ### Building a bookmarklet with jQuery
+
+模板中，`<!-- -->` 注释中不能有 template tag，比如 `<!-- {% with %} -->`
