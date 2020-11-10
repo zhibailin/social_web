@@ -89,3 +89,7 @@ https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://u
 ### Building a bookmarklet with jQuery
 
 模板中，`<!-- -->` 注释中不能有 template tag，比如 `<!-- {% with %} -->`
+
+测试：
+1. https://127.0.0.1:8000/account/ 将 `Bookmark it` 按钮拖到书签栏
+2. 打开亚马逊或者其他网站，点击 `Bookmark it`
