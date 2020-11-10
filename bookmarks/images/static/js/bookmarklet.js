@@ -6,7 +6,7 @@
     var min_height = 100;
 
     function bookmarklet(msg) {
-        // load CSS
+        // load CSS, 用一个随机数参数防止浏览器返回一个缓存文件
         var css = jQuery('<link>');
         css.attr({
             rel: 'stylesheet',
@@ -15,11 +15,12 @@
         });
         jQuery('head').append(css);
 
-        // load HTML
+        // custom HTML, 包含当前网页中找到的图片 
         box_html = '<div id="bookmarklet"><a href="#" id="close">&times;</a><h1>Select an image to bookmark:</h1><div class="images"></div></div>';
+        // 添加 HTML 到 当前网站的 <body> 中
         jQuery('body').append(box_html);
 
-        // close event
+        // close event: 通过 jQuery selectors，当用户点击 close link 时删除上面的 HTML
         jQuery('#bookmarklet #close').click(function(){
             jQuery('#bookmarklet').remove();
         });
