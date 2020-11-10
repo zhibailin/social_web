@@ -21,7 +21,7 @@
         jQuery('body').append(box_html);
 
         // close event: 通过 jQuery selectors，当用户点击 close link 时删除上面的 HTML
-        jQuery('#bookmarklet #close').click(function(){
+        jQuery('#bookmarklet #close').click(function (){
             jQuery('#bookmarklet').remove();
         });
 
@@ -35,7 +35,7 @@
         });
 
         // when an image is selected open URL with it
-        jQuery('#bookmarklet .images a').click(function(e){
+        jQuery('#bookmarklet .images a').click(function (e){
             selected_image = jQuery(this).children('img').attr('src');
             // hide bookmarklet
             jQuery('#bookmarklet').hide();
