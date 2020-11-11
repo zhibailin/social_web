@@ -54,7 +54,21 @@ which adds a `messages` variable to the request context.-->
   </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- load the JS Cookie plugin from a public CDN -->
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.1/src/js.cookie.min.js"></script>
 <script>
+  var csrftoken = Cookies.get('csrftoken');
+  function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+  $.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+    }
+  }); 
   $(document).ready(function(){
     {% block domready %}
       // domready 代码块里面包含指定的 JS 代码, 在客户端执行
