@@ -102,3 +102,8 @@ https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://u
 `pip install easy-thumbnails==2.7`
 
 `python manage.py migrate`
+
+### Adding AJAX actions with jQuery
+加载 jQuery 的 2 种方式：
+1. load the jQuery framework from Google's CDN. 
+2. download jQuery from https://jquery.com/ and add it to the static directory.

@@ -52,5 +52,14 @@ which adds a `messages` variable to the request context.-->
     {% block content %}
     {% endblock content %}
   </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    {% block domready %}
+      // domready 代码块里面包含指定的 JS 代码, 在客户端执行
+    {% endblock domready %}
+  });
+</script>
 </body>
 </html>
