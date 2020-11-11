@@ -1,3 +1,4 @@
+from common.decorators import ajax_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -45,6 +46,7 @@ def image_detail(request, id, slug):
                   })
 
 
+@ajax_required
 @login_required
 @require_POST
 def image_like(request):
