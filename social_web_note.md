@@ -110,3 +110,6 @@ https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://u
 
 测试：https://127.0.0.1:8000/images/
 若要删除图片，需要登录后台操作
+
+# Tracking User Action
+## follow system
