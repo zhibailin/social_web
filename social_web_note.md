@@ -116,3 +116,7 @@ https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://u
 
 `python manage.py makemigrations account`
 `python manage.py migrate account`
+
+user list 测试：
+`python manage.py runserver`
+http://127.0.0.1:8000/account/users/
