@@ -106,16 +106,19 @@ def user_detail(request, username):
                   {'section': 'people',
                    'user': user})
 
+# 3个装饰器，限定 3 个约束
 @ajax_required
 @require_POST
 @login_required
 def user_follow(request):
+    # <a href="#" data-id="{{ user.id }}" data-action="{% if request.user in user.followers.all %}un{% endif %}follow" class="follow button">
     user_id = request.POST.get('id')
     action = request.POST.get('action')
     if user_id and action:
         try:
             user = User.objects.get(id=user_id)
             if action == 'follow':
+                # use the intermediary `Contact` model to create or delete user relationships
                 Contact.objects.get_or_create(user_from=request.user,
                                               user_to=user)
             else:
