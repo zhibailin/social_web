@@ -144,3 +144,10 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_TWITTER_KEY = 'XXX' # Twitter API Key
 SOCIAL_AUTH_TWITTER_SECRET = 'XXX' # Twitter API Secret
+
+from django.urls import reverse_lazy
+
+ABSOLUTE_URL_OVERRIDES = {
+    'auth.user': lambda u: reverse_lazy('user_detail',
+                                        args=[u.username])
+}
