@@ -146,6 +146,10 @@ images_by_popularity = Image.objects.annotate(total_likes=Count('users_like'))\
 - denormolize `total_likes` -- 将 `total_likes` 作为一个新的字段添加到 `Image` model。
 - 问题是如何保持该字段的更新 -- 使用 *Django signals*
 
-
+### 1. denormalization：在 model 中添加字段并 migrate
 `python manage.py makemigrations images`
 `python manage.py migrate images`
+
+### 2. 创建 receiver function
+### 3. 将 receiver function 连接到 signal
+import `signals` module in the `ready()` mehtod of the **application configuration class**.
