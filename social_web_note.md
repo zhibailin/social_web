@@ -153,3 +153,8 @@ images_by_popularity = Image.objects.annotate(total_likes=Count('users_like'))\
 ### 2. 创建 receiver function
 ### 3. 将 receiver function 连接到 signal
 import `signals` module in the `ready()` mehtod of the **application configuration class**.
+
+测试：`python manage.py runserver`
+1. 先对某图片点击 LIKE
+2. 到后台查看 Image 的 `Total likes` 
+3. 此前的 likes 并未被计入
