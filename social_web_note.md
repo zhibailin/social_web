@@ -129,3 +129,5 @@ http://127.0.0.1:8000/account/users/
 
 sync the application with the database
 `python manage.py migrate`
+
+测试 http://127.0.0.1:8000/account/

@@ -56,7 +56,7 @@
         var conflict = typeof window.$ != 'undefined';
         // Create the script and point to Google API
         var script = document.createElement('script');
-        script.src = '//lib.sinaapp.com/js/jquery/' +
+        script.src = '//ajax.googleapis.com/ajax/libs/jquery/' +
             jquery_version + '/jquery.min.js';
         // Add the script to the 'head' for processing
         document.head.appendChild(script);
