@@ -1,5 +1,6 @@
 {% load thumbnail %}
 
+<!--  retrieve the `user` and the related `Profile` object -->
 {% with user=action.user profile=action.user.profile %}
 <div class="action">
   <div class="images">
@@ -11,6 +12,7 @@
       </a>
     {% endif %}
 
+    <!--  display the image of the `target` object -->
     {% if action.target %}
       {% with target=action.target %}
         {% if target.image %}
@@ -22,6 +24,7 @@
       {% endwith %}
     {% endif %}
   </div>
+  <!-- display the link -->
   <div class="info">
     <p>
       <span class="date">{{ action.created|timesince }} ago</span>
