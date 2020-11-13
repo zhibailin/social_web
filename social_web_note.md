@@ -120,3 +120,6 @@ https://127.0.0.1:8000/images/create/?title=%20Django%20and%20Duke&url=https://u
 user list 测试：
 `python manage.py runserver`
 http://127.0.0.1:8000/account/users/
+
+## activity stream
+`python manage.py startapp actions`
