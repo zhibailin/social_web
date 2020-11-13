@@ -123,3 +123,9 @@ http://127.0.0.1:8000/account/users/
 
 ## activity stream
 `python manage.py startapp actions`
+ 
+ create initial migrations for "action" application
+ `python manage.py makemigrations actions`
+
+sync the application with the database
+`python manage.py migrate`
