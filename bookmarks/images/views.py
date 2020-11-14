@@ -51,11 +51,14 @@ def image_create(request):
 
 def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug=slug)
+    # a given key 'image:{image.id}:views'
+    total_views = r.incr(f'image:{image.id}:views')
     return render(request,
                   'images/image/detail.html',
                   {
                       'section': 'images',
                       'image': image,
+                      'total_views': total_views,
                   })
 
 
