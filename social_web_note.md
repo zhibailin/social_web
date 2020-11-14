@@ -131,3 +131,17 @@ sync the application with the database
 `python manage.py migrate`
 
 测试 http://127.0.0.1:8000/account/
+
+## denormalization and signals
+场景：获取最受欢迎的 images。
+实现：利用聚合函数统计出 `total_likes` 并排序
+```python 
+from django.db.models import Count
+from images.models import Image
+
+images_by_popularity = Image.objects.annotate(total_likes=Count('users_like'))\
+                                    .order_by('-total_likes')
+```
+但是，该方法性能开销很大，优化方案是：
+- denormolize `total_likes` -- 将 `total_likes` 作为一个新的字段添加到 `Image` model。
+- 问题是如何保持该字段的更新 -- 使用 *Django signals*
