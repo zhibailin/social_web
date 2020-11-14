@@ -10,6 +10,15 @@ from django.views.decorators.http import require_POST
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from actions.utils import create_action
 
+import redis
+from django.conf import settings
+
+
+# connect to redis
+r = redis.Redis(host=settings.REDIS_HOST,
+                port=settings.REDIS_PORT,
+                db=settings.REDIS_DB)
+
 
 @login_required # 登录了才能操作
 def image_create(request):
