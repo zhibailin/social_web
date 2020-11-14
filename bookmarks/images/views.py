@@ -53,6 +53,8 @@ def image_detail(request, id, slug):
     image = get_object_or_404(Image, id=id, slug=slug)
     # a given key 'image:{image.id}:views'
     total_views = r.incr(f'image:{image.id}:views')
+    # increment image ranking by 1
+    r.zincrby('image_ranking', 1, image.id)
     return render(request,
                   'images/image/detail.html',
                   {
