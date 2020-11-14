@@ -162,4 +162,12 @@ import `signals` module in the `ready()` mehtod of the **application configurati
 测试：`python manage.py runserver`
 1. 先对某图片点击 LIKE
 2. 到后台查看 Image 的 `Total likes` 
-3. 此前的 likes 并未被计入
+3. 此前的 likes 并未被计入，需要更新操作 `python manage.py shell`：
+   ```shell
+    from images.models import Image
+    
+    for image in Image.objects.all():
+        image.total_likes = image.users_like.count()
+        image.save()
+   ```
+
