@@ -189,3 +189,5 @@ r.get('foo')
 
 - 如果采用 Django ORM, 那么图片每次被浏览，都要调用 SQL `UPDATE` 来更新 `浏览量`，
 - 如果采用 Redis，只需在内存中 “+1”，极大提升性能，节省开支。
+
+测试：open an image detail page in your browser and reload it several times.
