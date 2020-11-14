@@ -143,6 +143,11 @@ images_by_popularity = Image.objects.annotate(total_likes=Count('users_like'))\
                                     .order_by('-total_likes')
 ```
 但是，该方法性能开销很大，优化方案是：
+
+```python
+images_by_popularity = Image.objects.order_by('-total_likes')
+```
+
 - denormolize `total_likes` -- 将 `total_likes` 作为一个新的字段添加到 `Image` model。
 - 问题是如何保持该字段的更新 -- 使用 *Django signals*
 
