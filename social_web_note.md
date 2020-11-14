@@ -191,3 +191,5 @@ r.get('foo')
 - 如果采用 Redis，只需在内存中 “+1”，极大提升性能，节省开支。
 
 测试：open an image detail page in your browser and reload it several times.
+
+测试：http://127.0.0.1:8000/images/ranking/
