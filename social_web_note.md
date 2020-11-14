@@ -171,3 +171,7 @@ import `signals` module in the `ready()` mehtod of the **application configurati
         image.save()
    ```
 
+## Using Redis for storing item views
+安装 Redis
+1. 官网下载安装
+2. 安装 Python 依赖 `pip install redis==3.4.1`
