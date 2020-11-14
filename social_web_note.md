@@ -175,3 +175,17 @@ import `signals` module in the `ready()` mehtod of the **application configurati
 安装 Redis
 1. 官网下载安装
 2. 安装 Python 依赖 `pip install redis==3.4.1`
+
+Python 与 Redis 的交互：
+```python
+import redis
+
+r = redis.Redis(host='localhost', port=6379, db=0)
+r.set('foo', 'bar')
+r.get('foo')
+```
+
+场景需求：存储一张图片被浏览的总次数。
+
+- 如果采用 Django ORM, 那么图片每次被浏览，都要调用 SQL `UPDATE` 来更新 `浏览量`，
+- 如果采用 Redis，只需在内存中 “+1”，极大提升性能，节省开支。
