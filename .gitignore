@@ -1,0 +1,7 @@
+.vscode
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+passwd.txt
+cert.crt
+cert.key
